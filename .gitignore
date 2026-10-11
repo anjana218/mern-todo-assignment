@@ -1,0 +1,13 @@
+# Dependencies
+backend/node_modules/
+frontend/node_modules/
+
+# Secrets
+backend/.env
+
+# Build output
+frontend/dist/
+
+# OS/editor junk
+.DS_Store
+*.log
