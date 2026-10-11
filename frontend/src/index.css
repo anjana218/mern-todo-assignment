@@ -1,0 +1,111 @@
+:root{
+  --ink: #0D1117;
+  --panel: #161B22;
+  --line: #2A313C;
+  --text: #E6EDF3;
+  --muted: #8B98A5;
+  --accent: #4FD1C5;
+  --danger: #FF6B6B;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.app{
+  width: 100%;
+  max-width: 520px;
+  padding: 3rem 1.25rem;
+}
+
+.app-header{ margin-bottom: 1.5rem; }
+.app-header h1{ margin: 0 0 0.2em; font-size: 1.8rem; }
+.app-header p{ margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+.task-form{
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+.task-form input{
+  flex: 1;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.7em 0.9em;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.task-form input:focus{ outline: none; border-color: var(--accent); }
+
+.task-form button{
+  background: var(--accent);
+  color: #06201d;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7em 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+}
+.task-form button:disabled{ opacity: 0.5; cursor: not-allowed; }
+
+.error-banner{
+  background: rgba(255,107,107,0.1);
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 0.7em 1em;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+.loading-state, .empty-state{ color: var(--muted); font-size: 0.9rem; }
+
+.task-list{ list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+
+.task-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.75em 1em;
+}
+
+.task-item-label{
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  cursor: pointer;
+  min-width: 0;
+}
+.task-item-label input{ accent-color: var(--accent); width: 1.05em; height: 1.05em; flex-shrink: 0; }
+
+.task-title{ overflow-wrap: anywhere; }
+
+.task-item.is-completed .task-title{
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.task-delete{
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: 6px;
+  padding: 0.4em 0.8em;
+  font-size: 0.8rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.task-delete:hover{ border-color: var(--danger); color: var(--danger); }
